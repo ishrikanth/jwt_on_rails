@@ -1,18 +1,18 @@
 # README
 
 Create a sample user to test the authentication mechanism using Rails Console.
-
+```
 rails c
 rails> User.create(email:'jwt@jwt.com', password:'jwt', password_confirmation:'jwt')
-
+```
 Start the server and check out how JWT authentication works:
 
 rails s
 
 Open another terminal and use cURL to test the API. First, try to authenticate without any email or password:
-
+```
 curl http://localhost:3000/home
-
+```
 The response should be {"errors":["Not Authenticated"]} since we have not provided any credentials.
 
 Now authenticate against the API and receive a JWT which we will use for subsequent requests:
